@@ -1,0 +1,173 @@
+/* info generali */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a{
+  color: grey;
+}
+i:hover{
+  cursor: pointer;
+}
+img:hover{
+  cursor: pointer;
+}
+/* inizio debug */
+body{
+  background-color: grey;
+}
+.verdino{
+  background-color: green;
+}
+.app{
+  background-color: blue;
+}
+.barraSinistra{
+  background-color: yellow;
+}
+
+/* fine debug */
+/* caratteristiche sfondo e posizione app */
+body{
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+.verdino{
+  position:absolute;
+  height: 15vh;
+  width: 100vw;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+.app{
+  margin-top: 5vh;
+  display: flex;
+  width: 90vw;
+  max-width: 1000px;
+  height: 90vh;
+  max-height: 700px;
+}
+/* caratteristiche barra sinistra */
+.barraSinistra{
+  width: 40%;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.account{
+  padding: 0px 5px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: orange;
+}
+.immagineUtente{
+  height: 30px;
+  width: auto;
+  border-radius: 50%;
+  margin: 5px;
+}
+.iconcineAccount i{
+  color: grey;
+  padding-left: 5px;
+}
+.desktop{
+  display: flex;
+  background-color: lightblue;
+  align-items: center;
+}
+.campanella i{
+  margin: 10px;
+  padding: 6px;
+  background-color: white;
+  color: blue;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+.ricerca{
+  display: flex;
+  height: 40px;
+  align-items: center;
+  background: white;
+}
+.ricerca i{
+  padding: 10px;
+}
+.inpRicerca{
+  width: 100%;
+  height: 80%;
+}
+.chatSinistra{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  overflow:auto;
+}
+.contatto{
+  display: flex;
+}
+.contatti{
+  overflow:auto;
+}
+/* caratteristiche barra destra */
+.barraDestra{
+  display: flex;
+  flex-direction: column;
+  width:60%;
+}
+.topDestra{
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  flex-wrap: nowrap;
+}
+.contattoAttivo{
+  display:flex;
+}
+.iconcineApp i{
+  padding-right: 10px;
+}
+.chatMsg{
+  height: calc(100% - 90px);
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+  overflow-y: auto;
+}
+.botDestra{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  background-color: white;
+  height: 50px;
+}
+.botDestra input{
+  width: 100%;
+}
+.botDestra i{
+  padding: 10px;
+}
+.msg{
+  border-radius: 15px;
+  padding: 15px;
+  margin: 10px 0;
+  width: max-content;
+  max-width: 400px;
+}
+.recived{
+  background-color: white;
+}
+.sent{
+  background-color: green;
+  align-self: flex-end;
+}
