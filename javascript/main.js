@@ -23,7 +23,7 @@ $(".inpRicerca").keyup(function () {
   $(".chatSinistra").show()
   var testoMaiusc = $('.inpRicerca').val()
   // per partire dalla prima
-  var testo = nameVal.charAt(0).toUpperCase() + nameVal.slice(1);
+  var testo = testoMaiusc.charAt(0).toUpperCase() + testoMaiusc.slice(1);
   // per trovare testo ovunque
   // var testo = testoMaiusc.toLowerCase();
   console.log(testo);
