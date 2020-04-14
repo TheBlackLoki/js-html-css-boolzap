@@ -138,10 +138,13 @@ body{
 }
 .chatMsg{
   height: calc(100% - 90px);
-  display: flex;
   flex-direction: column;
   padding: 35px;
   overflow-y: auto;
+  display: none;
+}
+.chatMsg.active{
+  display: flex;
 }
 .botDestra{
   display:flex;
@@ -163,6 +166,14 @@ body{
   margin: 10px 0;
   width: max-content;
   max-width: 400px;
+  display: flex;
+  position: relative;
+}
+.msg:after{
+  content: "";
+  display: table;
+  overflow: hidden;
+  clear: both;
 }
 .recived{
   background-color: white;
@@ -171,3 +182,19 @@ body{
   background-color: green;
   align-self: flex-end;
 }
+.fa-angle-down,  .panel{
+  display: none;
+}
+.msg:hover .fa-angle-down{
+  display: block;
+}
+ .panel.active{
+   display: block;
+   position:absolute;
+   bottom: -25px;
+   width: 150px;
+   height: 32px;
+   background-color: white;
+   text-align: center;
+   padding: 7px 0px;
+ }

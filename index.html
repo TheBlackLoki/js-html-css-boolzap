@@ -35,7 +35,7 @@
           <input class="inpRicerca" type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
         </div>
         <div class="contatti">
-          <div class="chatSinistra">
+          <div class="chatSinistra active" data-conv="0">
             <div class="contatto">
               <img class="immagineUtente" src="img/iconautente.jfif" alt="Contattino">
               <div class="infoContatto">
@@ -47,7 +47,7 @@
               <p>00:00</p>
             </div>
           </div>
-          <div class="chatSinistra">
+          <div class="chatSinistra" data-conv="1">
             <div class="contatto">
               <img class="immagineUtente" src="img/iconautente.jfif" alt="Contattino">
               <div class="infoContatto">
@@ -59,7 +59,7 @@
               <p>00:00</p>
             </div>
           </div>
-          <div class="chatSinistra">
+          <div class="chatSinistra" data-conv="2">
             <div class="contatto">
               <img class="immagineUtente" src="img/iconautente.jfif" alt="Contattino">
               <div class="infoContatto">
@@ -71,7 +71,7 @@
               <p>00:00</p>
             </div>
           </div>
-          <div class="chatSinistra">
+          <div class="chatSinistra" data-conv="3">
             <div class="contatto">
               <img class="immagineUtente" src="img/iconautente.jfif" alt="Contattino">
               <div class="infoContatto">
@@ -83,7 +83,7 @@
               <p>00:00</p>
             </div>
           </div>
-          <div class="chatSinistra">
+          <div class="chatSinistra" data-conv="4">
             <div class="contatto">
               <img class="immagineUtente" src="img/iconautente.jfif" alt="Contattino">
               <div class="infoContatto">
@@ -95,7 +95,7 @@
               <p>00:00</p>
             </div>
           </div>
-          <div class="chatSinistra">
+          <div class="chatSinistra" data-conv="5">
             <div class="contatto">
               <img class="immagineUtente" src="img/iconautente.jfif" alt="Contattino">
               <div class="infoContatto">
@@ -114,8 +114,8 @@
           <div class="contattoAttivo">
             <img class="immagineUtente" src="img/iconautente.jfif" alt="Contattino">
             <div class="infoAttivo">
-              <p>Gigino</p>
-              <p>Uldtimo accesso pochi secondi fa</p>
+              <p id="nomeAttivo"></p>
+              <p>Ultimo accesso pochi secondi fa</p>
             </div>
           </div>
           <div class="iconcineApp">
@@ -124,13 +124,40 @@
             <i class="fas fa-ellipsis-v"></i>
           </div>
         </div>
-        <div class="chatMsg">
+        <div class="chatMsg active" data-conv="0">
           <div class="msg recived">
             <p>Ciao come stai?</p>
+            <i class="fas fa-angle-down"></i>
+            <div class="panel">
+              <div class="destroy">
+                Cancella il Messaggio
+              </div>
+            </div>
           </div>
           <div class="msg sent">
             <p>Ciao come stai?</p>
+            <i class="fas fa-angle-down"></i>
+            <div class="panel">
+              <div class="destroy">
+                Cancella il Messaggio
+              </div>
+            </div>
           </div>
+        </div>
+        <div class="chatMsg" data-conv="1">
+
+        </div>
+        <div class="chatMsg" data-conv="2">
+
+        </div>
+        <div class="chatMsg" data-conv="3">
+
+        </div>
+        <div class="chatMsg" data-conv="4">
+
+        </div>
+        <div class="chatMsg" data-conv="5">
+
         </div>
         <div class="botDestra">
           <i class="far fa-grin-alt"></i>
