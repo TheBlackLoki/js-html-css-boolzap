@@ -13,27 +13,13 @@ i:hover{
 img:hover{
   cursor: pointer;
 }
-/* inizio debug */
-body{
-  background-color: grey;
-}
-.verdino{
-  background-color: green;
-}
-.app{
-  background-color: blue;
-}
-.barraSinistra{
-  background-color: yellow;
-}
-
-/* fine debug */
 /* caratteristiche sfondo e posizione app */
 body{
   display: flex;
   overflow: hidden;
   justify-content: center;
   align-items: center;
+  background-color: #d6dbd8;
 }
 .verdino{
   position:absolute;
@@ -42,6 +28,7 @@ body{
   top: 0;
   right: 0;
   z-index: -1;
+  background-color: #009688;
 }
 .app{
   margin-top: 5vh;
@@ -50,6 +37,7 @@ body{
   max-width: 1000px;
   height: 90vh;
   max-height: 700px;
+  background-image:url(../img/sfondino.jpg);
 }
 /* caratteristiche barra sinistra */
 .barraSinistra{
@@ -57,6 +45,7 @@ body{
   min-width: 300px;
   display: flex;
   flex-direction: column;
+  background-color: #fff;
 }
 .account{
   padding: 0px 5px;
@@ -64,7 +53,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: orange;
+  background-color: #ededed;
 }
 .immagineUtente{
   height: 30px;
@@ -72,20 +61,20 @@ body{
   border-radius: 50%;
   margin: 5px;
 }
-.iconcineAccount i{
+i{
   color: grey;
-  padding-left: 5px;
+  padding-right: 20px;
 }
 .desktop{
   display: flex;
-  background-color: lightblue;
+  background-color: #9de1fe;
   align-items: center;
 }
 .campanella i{
   margin: 10px;
   padding: 6px;
   background-color: white;
-  color: blue;
+  color: #9de1fe;
   border-radius: 50%;
   width: 30px;
   height: 30px;
@@ -94,20 +83,26 @@ body{
   display: flex;
   height: 40px;
   align-items: center;
-  background: white;
+  background: #ededed;
 }
 .ricerca i{
   padding: 10px;
 }
-.inpRicerca{
-  width: 100%;
+input{
+  width: 85%;
   height: 80%;
+  border-radius: 18px;
+  border-style: solid;
+  border: 0px;
+  color: black;
+
 }
 .chatSinistra{
   display: flex;
   justify-content: space-between;
   padding: 5px 0;
   overflow:auto;
+  border-bottom:1px lightgrey solid;
 }
 .contatto{
   display: flex;
@@ -129,13 +124,12 @@ body{
   align-items: center;
   padding: 0 10px;
   flex-wrap: nowrap;
+  background-color: #ededed;
 }
 .contattoAttivo{
   display:flex;
 }
-.iconcineApp i{
-  padding-right: 10px;
-}
+
 .chatMsg{
   height: calc(100% - 90px);
   flex-direction: column;
@@ -150,15 +144,12 @@ body{
   display:flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 0;
-  background-color: white;
+  padding: 0;
   height: 50px;
-}
-.botDestra input{
-  width: 100%;
+  background-color: #ededed;
 }
 .botDestra i{
-  padding: 10px;
+  padding: 15px;
 }
 .msg{
   border-radius: 15px;
@@ -179,7 +170,7 @@ body{
   background-color: white;
 }
 .sent{
-  background-color: green;
+  background-color: #dcf8c6;
   align-self: flex-end;
 }
 .fa-angle-down,  .panel{
@@ -187,14 +178,30 @@ body{
 }
 .msg:hover .fa-angle-down{
   display: block;
+  padding: 0;
 }
- .panel.active{
-   display: block;
-   position:absolute;
-   bottom: -25px;
-   width: 150px;
-   height: 32px;
-   background-color: white;
-   text-align: center;
-   padding: 7px 0px;
- }
+.panel{
+  max-width: 340px;
+  overflow: hidden;
+  position: absolute;
+  z-index: 10000;
+  border-radius: 5px;
+}
+.sent .panel{
+  right: -15px;
+}
+.recived .panel{
+  left: -15px;
+}
+.panel.active{
+  display: block;
+  bottom: -25px;
+  width: 150px;
+  height: 32px;
+  background-color: white;
+  text-align: center;
+  padding: 7px 0px;
+}
+.destroy{
+  cursor: pointer;
+}

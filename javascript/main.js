@@ -23,16 +23,15 @@ $(document).ready(function(){
     $(".chatSinistra").show()
     var testoMaiusc = $('.inpRicerca').val()
     // per partire dalla prima
-    var testo = testoMaiusc.charAt(0).toUpperCase() + testoMaiusc.slice(1);
+    // var testo = testoMaiusc.charAt(0).toUpperCase() + testoMaiusc.slice(1);
     // per trovare testo ovunque
-    // var testo = testoMaiusc.toLowerCase();
+    var testo = testoMaiusc.toLowerCase();
     console.log(testo);
     $(".nomeContatto").each(function () {
-      var questo = $(this).text()
+      var questo = $(this).text().toLowerCase()
       var padre = $(this).parent()
       var nonno = padre.parent()
       if (questo.includes(testo)) {
-        console.log(questo);
         nonno.parent().show()
       }else {
         nonno.parent().hide()
