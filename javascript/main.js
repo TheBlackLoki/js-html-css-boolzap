@@ -44,7 +44,9 @@ $(document).ready(function(){
     $(".chatSinistra").removeClass("active")
     $(this).addClass("active")
     var nomeAttivo = $(this).find(".nomeContatto").text()
-    document.getElementById('nomeAttivo').innerHTML="<p>" + nomeAttivo + "</p>"
+    $('#nomeAttivo').html("<p>" + nomeAttivo + "</p>")
+    var immagineAttivo = $(this).find(".immagineUtente").attr("src")
+    $(".immagineAttivo").attr("src",immagineAttivo)
     var dataactive = $(this).attr("data-conv")
     $(".chatMsg").removeClass("active")
     $('.chatMsg[data-conv="' + dataactive + '"]').addClass("active");

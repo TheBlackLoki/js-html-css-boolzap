@@ -55,8 +55,8 @@ body{
   justify-content: space-between;
   background-color: #ededed;
 }
-.immagineUtente{
-  height: 30px;
+img{
+  height: 35px;
   width: auto;
   border-radius: 50%;
   margin: 5px;
@@ -95,7 +95,6 @@ input{
   border-style: solid;
   border: 0px;
   color: black;
-
 }
 .chatSinistra{
   display: flex;
@@ -109,6 +108,9 @@ input{
 }
 .contatti{
   overflow:auto;
+}
+.infoContatto{
+  padding-top: 3px;
 }
 /* caratteristiche barra destra */
 .barraDestra{
