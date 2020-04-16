@@ -1,17 +1,26 @@
 $(document).ready(function(){
-// variabili per Template in funzioni
+  // variabili per Template in funzioni
 
   var source = $("#templateMessaggio").html();
   var template = Handlebars.compile(source);
-
+  // var messaggioInvio = $("#invio").val()
   // togliere mic e mettere tasto send all'inserimento di dati nell'imput
 
 
+
   $(".fa-paper-plane").hide();
-  $("#invio").keypress(function () {
+
+  $("#invio").keyup(function () {
+    if ($("#invio").val() == "") {
+      $(".fa-paper-plane").hide();
+      $(".fa-microphone").show();
+    }else {
+
     $(".fa-paper-plane").show();
     $(".fa-microphone").hide();
+    }
   })
+
 
 // Utente scrive messaggio nel box e preme sul send o invio-->il messaggio viene stampato a destra in verde e dopo un secondo viene stampata la risposta
 
@@ -22,6 +31,7 @@ $(document).ready(function(){
       invioMsg()
     }
   })
+
 // Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite
   $(".inpRicerca").keyup(function () {
     $(".chatSinistra").show()
@@ -67,19 +77,21 @@ $(document).ready(function(){
 
 //----------------FUNZIONI-----------//
   function invioMsg() {
+    if ($("#invio").val() !== "") {
     var messaggio = $("#invio").val()
-    var context = {messaggio:messaggio,tipo:"sent"};
-    var html= template(context);
-    $(".chatMsg.active").append(html);
+    var send = {messaggio:messaggio,tipo:"sent"};
+    var htmlSend= template(send);
+    $(".chatMsg.active").append(htmlSend);
     $("#invio").val("");
     $(".fa-paper-plane").hide();
     $(".fa-microphone").show();
     setTimeout(risposta, 1000);
   }
+  }
   function risposta() {
-    context = {messaggio:"ok!", tipo:"recived"};
-    html= template(context);
-    $(".chatMsg.active").append(html)
+    var recived = {messaggio:"ok!", tipo:"recived"};
+    var htmlRecived= template(recived);
+    $(".chatMsg.active").append(htmlRecived)
   }
   function mostraOpzioni() {
     var msgHover = $(this).closest(".msg")
