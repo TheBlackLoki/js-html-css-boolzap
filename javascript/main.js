@@ -1,7 +1,11 @@
-// togliere mic e mettere tasto send all'inserimento di dati nell'imput
-
-
 $(document).ready(function(){
+// variabili per Template in funzioni
+
+  var source = $("#templateMessaggio").html();
+  var template = Handlebars.compile(source);
+
+  // togliere mic e mettere tasto send all'inserimento di dati nell'imput
+
 
   $(".fa-paper-plane").hide();
   $("#invio").keypress(function () {
@@ -64,14 +68,18 @@ $(document).ready(function(){
 //----------------FUNZIONI-----------//
   function invioMsg() {
     var messaggio = $("#invio").val()
-    $(".chatMsg.active").append("<div class='msg sent'><p>" + messaggio + "</p><i class='fas fa-angle-down'></i><div class='panel'><div class='destroy'>Cancella il Messaggio</div></div</div>");
+    var context = {messaggio:messaggio,tipo:"sent"};
+    var html= template(context);
+    $(".chatMsg.active").append(html);
     $("#invio").val("");
     $(".fa-paper-plane").hide();
     $(".fa-microphone").show();
     setTimeout(risposta, 1000);
   }
   function risposta() {
-    $(".chatMsg.active").append("<div class='msg recived'><p>ok</p><i class='fas fa-angle-down'></i><div class='panel'><div class='destroy'>Cancella il Messaggio</div></div></div>")
+    context = {messaggio:"ok!", tipo:"recived"};
+    html= template(context);
+    $(".chatMsg.active").append(html)
   }
   function mostraOpzioni() {
     var msgHover = $(this).closest(".msg")

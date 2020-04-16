@@ -167,8 +167,21 @@
         </div>
       </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="javascript/main.js" charset="utf-8"></script>
+    <!-- TEMPLATE MESSAGGIO -->
+    <script id="templateMessaggio"type="text/x-handlebars-template">
+      <div class='msg {{tipo}}'>
+        <p>{{messaggio}}</p>
+        <i class='fas fa-angle-down'></i>
+        <div class='panel'>
+          <div class='destroy'>
+          Cancella il Messaggio
+          </div>
+        </div>
+      </div>
+
+    </script>
   </body>
 </html>
